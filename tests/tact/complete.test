@@ -1,8 +1,12 @@
 import "@stdlib/ownable";
 
 struct SampleStruct {
-    message: Int as uint32;
+    message: Int as uint130;
 }
+
+asm(a b -> 0 1) fun sum(a: Int, b: Int): Int { WHATEVER }
+
+asm fun inc(a: Int): Int { INC }
 
 @name(store_uint)
 native storeUint(s: Builder, value: Int, bits: Int): Builder;
@@ -23,7 +27,7 @@ contract MyContract with MyTrait, Ownable? {
     owner: Address; // comment
     value: Int as uint32 = 0b101010 + 0o77;
     counters: map<Int, Address> /* Address, "Address" */ ;
-    map: map<Int as int16, Int as uint32>;
+    map: map<Int as int10, Int as uint32>;
     b: bounced<MyMessage>;
     c: map<Bool, Cell>;
     a: map<Slice, String>;
@@ -55,9 +59,48 @@ contract MyContract with MyTrait, Ownable? {
 	["punctuation", ":"],
 	["builtin", "Int"],
 	["keyword", "as"],
-	["keyword", "uint32"],
+	["builtin", "uint130"],
 	["punctuation", ";"],
 
+	["punctuation", "}"],
+
+	["keyword", "asm"],
+	["punctuation", "("],
+	["variable", "a"],
+	["variable", "b"],
+	["operator", "->"],
+	["number", "0"],
+	["number", "1"],
+	["punctuation", ")"],
+	["keyword", "fun"],
+	["function", "sum"],
+	["punctuation", "("],
+	["variable", "a"],
+	["punctuation", ":"],
+	["builtin", "Int"],
+	["punctuation", ","],
+	["variable", "b"],
+	["punctuation", ":"],
+	["builtin", "Int"],
+	["punctuation", ")"],
+	["punctuation", ":"],
+	["builtin", "Int"],
+	["punctuation", "{"],
+	["constant", "WHATEVER"],
+	["punctuation", "}"],
+
+	["keyword", "asm"],
+	["keyword", "fun"],
+	["function", "inc"],
+	["punctuation", "("],
+	["variable", "a"],
+	["punctuation", ":"],
+	["builtin", "Int"],
+	["punctuation", ")"],
+	["punctuation", ":"],
+	["builtin", "Int"],
+	["punctuation", "{"],
+	["constant", "INC"],
 	["punctuation", "}"],
 
 	["attribute", [
@@ -163,7 +206,7 @@ contract MyContract with MyTrait, Ownable? {
 	["punctuation", ":"],
 	["builtin", "Int"],
 	["keyword", "as"],
-	["keyword", "uint32"],
+	["builtin", "uint32"],
 	["operator", "="],
 	["number", "0b101010"],
 	["operator", "+"],
@@ -190,11 +233,11 @@ contract MyContract with MyTrait, Ownable? {
 		["punctuation", "<"],
 		["builtin", "Int"],
 		["keyword", "as"],
-		["keyword", "int16"],
+		["builtin", "int10"],
 		["punctuation", ","],
 		["builtin", "Int"],
 		["keyword", "as"],
-		["keyword", "uint32"],
+		["builtin", "uint32"],
 		["punctuation", ">"]
 	]],
 	["punctuation", ";"],
