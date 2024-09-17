@@ -35,10 +35,10 @@ Test files are located in `tests/X` folders, where `X` can be one of:
 
 [Once initialized](#initialization), you'll be able to run tests for each language in this repo, namely:
 
-* `yarn test-tact` will run tests for Tact
-* `yarn test-func` will run tests for FunC
-* `yarn test-fift` will run tests for Fift
-* `yarn test-tlb` will run tests for TL-B
+* `yarn test:tact` will run tests for Tact
+* `yarn test:func` will run tests for FunC
+* `yarn test:fift` will run tests for Fift
+* `yarn test:tlb` will run tests for TL-B
 
 And `yarn test` runs all those tests in succession.
 
