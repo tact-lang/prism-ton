@@ -1,0 +1,166 @@
+;; Void
+() void();
+
+;; Regular parameters
+() params(int p1, cell p2, () p3, (slice) p4, [builder] p5);
+
+;; Parametric polymorphism with forall
+forall X -> () poly(X p1);
+forall X, Y -> (Y, X) poly'(X p1, Y p2);
+
+;; Attributes (called specifiers in TON Docs)
+() attr() impure inline_ref inline method_id(0x2A);
+() attr'() method_id(42);
+() attr''() method_id;
+
+;; Empty body (note, that {} is an identifier, so there must be whitespace in-between)
+() body() { }
+
+;; Everything
+forall XXX -> XXX everything(XXX x) impure inline_ref inline method_id(0x2A) method_id { }
+
+----------------------------------------------------
+
+[
+	["comment", ";; Void"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "void"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["comment", ";; Regular parameters"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "params"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "p1"],
+	["punctuation", ","],
+	["builtin", "cell"],
+	["variable", "p2"],
+	["punctuation", ","],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["variable", "p3"],
+	["punctuation", ","],
+	["punctuation", "("],
+	["builtin", "slice"],
+	["punctuation", ")"],
+	["variable", "p4"],
+	["punctuation", ","],
+	["punctuation", "["],
+	["builtin", "builder"],
+	["punctuation", "]"],
+	["variable", "p5"],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["comment", ";; Parametric polymorphism with forall"],
+
+	["keyword", "forall"],
+	["class-name", "X"],
+	["operator", "->"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "poly"],
+	["punctuation", "("],
+	["class-name", "X"],
+	["variable", "p1"],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["keyword", "forall"],
+	["class-name", "X"],
+	["punctuation", ","],
+	["class-name", "Y"],
+	["operator", "->"],
+	["punctuation", "("],
+	["class-name", "Y"],
+	["punctuation", ","],
+	["class-name", "X"],
+	["punctuation", ")"],
+	["function", "poly'"],
+	["punctuation", "("],
+	["class-name", "X"],
+	["variable", "p1"],
+	["punctuation", ","],
+	["class-name", "Y"],
+	["variable", "p2"],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["comment", ";; Attributes (called specifiers in TON Docs)"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "attr"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["keyword", "impure"],
+	["keyword", "inline_ref"],
+	["keyword", "inline"],
+	["keyword", "method_id"],
+	["punctuation", "("],
+	["number", "0x2A"],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "attr'"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["keyword", "method_id"],
+	["punctuation", "("],
+	["number", "42"],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "attr''"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["keyword", "method_id"],
+	["punctuation", ";"],
+
+	["comment", ";; Empty body (note, that {} is an identifier, so there must be whitespace in-between)"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "body"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["comment", ";; Everything"],
+
+	["keyword", "forall"],
+	["class-name", "XXX"],
+	["operator", "->"],
+	["class-name", "XXX"],
+	["function", "everything"],
+	["punctuation", "("],
+	["class-name", "XXX"],
+	["variable", "x"],
+	["punctuation", ")"],
+	["keyword", "impure"],
+	["keyword", "inline_ref"],
+	["keyword", "inline"],
+	["keyword", "method_id"],
+	["punctuation", "("],
+	["number", "0x2A"],
+	["punctuation", ")"],
+	["keyword", "method_id"],
+	["punctuation", "{"],
+	["punctuation", "}"]
+]
+
+----------------------------------------------------
+
+Functions

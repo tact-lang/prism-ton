@@ -1,0 +1,224 @@
+;; Identifiers
+global query';
+global query'';
+;; global CHECK;
+global _internal_val;
+global message_found?;
+global get_pubkeys&signatures;
+global dict::udict_set_builder;
+global _+_;
+global __;
+global fatal!;
+global 123validname;
+global 2+2=2*2;
+global -alsovalidname;
+global 0xefefefhahaha;
+global {hehehe};
+global pa{--}in"`aaa`";
+global `I'm an identifier too`;
+global `any symbols ; ~ () are allowed here...`;
+;; global C4;
+;; global C4g;
+global 4C;
+global _0x0;
+global _0;
+global 0x_;
+global 0x0_;
+global 0_;
+global hash#256;
+global 💀💀💀0xDEADBEEF💀💀💀;
+global __tact_verify_address;
+global __tact_pow2;
+global randomize_lt;
+global fixed248::asin;
+global fixed248::nrand_fast;
+global atan_f261_inlined;
+global f̷̨͈͚́͌̀i̵̩͔̭̐͐̊n̸̟̝̻̩̎̓͋̕e̸̝̙̒̿͒̾̕;
+global ❤️❤️❤️thanks❤️❤️❤️;
+global intslice;
+global int2;
+
+;; Function identifiers, which can start with . or ~
+() ~impure_touch();
+() ~udict::delete_get_min();
+() .something();
+
+----------------------------------------------------
+
+[
+	["comment", ";; Identifiers"],
+
+	["keyword", "global"],
+	["variable", "query'"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "query''"],
+	["punctuation", ";"],
+
+	["comment", ";; global CHECK;"],
+
+	["keyword", "global"],
+	["variable", "_internal_val"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "message_found?"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "get_pubkeys&signatures"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "dict::udict_set_builder"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "_+_"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "__"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "fatal!"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "123validname"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "2+2=2*2"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "-alsovalidname"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "0xefefefhahaha"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "{hehehe}"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "pa{--}in\"`aaa`\""],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "`I'm an identifier too`"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "`any symbols ; ~ () are allowed here...`"],
+	["punctuation", ";"],
+
+	["comment", ";; global C4;"],
+
+	["comment", ";; global C4g;"],
+
+	["keyword", "global"],
+	["variable", "4C"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "_0x0"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "_0"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "0x_"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "0x0_"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "0_"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "hash#256"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "💀💀💀0xDEADBEEF💀💀💀"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "__tact_verify_address"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "__tact_pow2"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "randomize_lt"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "fixed248::asin"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "fixed248::nrand_fast"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "atan_f261_inlined"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "f̷̨͈͚́͌̀i̵̩͔̭̐͐̊n̸̟̝̻̩̎̓͋̕e̸̝̙̒̿͒̾̕"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "❤️❤️❤️thanks❤️❤️❤️"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "intslice"],
+	["punctuation", ";"],
+
+	["keyword", "global"],
+	["variable", "int2"],
+	["punctuation", ";"],
+
+	["comment", ";; Function identifiers, which can start with . or ~"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "~impure_touch"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "~udict::delete_get_min"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "."],
+	["function", "something"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"]
+]
+
+----------------------------------------------------
+
+Identifiers. Yes, they're this crazy...

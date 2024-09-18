@@ -1,0 +1,508 @@
+;; return
+() return_stmt() { return (); }
+int return_stmt'() { return 42; }
+
+;; Block
+() block_stmt() {
+    {
+        { return (); }
+    }
+}
+
+;; Empty
+() empty_stmt() { ;
+    ; ; ; ;
+}
+
+;; Condition
+() cond_stmt() {
+    if 1 { }
+    ifnot 0 { }
+
+    if 1 { ; ; }
+    ifnot 0 { ; ; }
+
+    if 0 { ; ; } else { ; ; }
+    ifnot 1 { ; ; } else { ; ; }
+
+    if 0 { } elseif 1 { }
+    if 0 { } elseifnot 0 { }
+    ifnot 1 { } elseif 1 { }
+    ifnot 1 { } elseifnot 0 { }
+
+    if 0 { ; ; } elseif 1 { ; ; }
+    if 0 { ; ; } elseifnot 0 { ; ; }
+    ifnot 1 { ; ; } elseif 1 { ; ; }
+    ifnot 1 { ; ; } elseifnot 0 { ; ; }
+
+    if 0 { ; ; } elseif 0 { ; ; } else { ; ; }
+    ifnot 1 { ; ; } elseifnot 1 { ; ; } else { ; ; }
+}
+
+;; repeat
+() repeat_stmt() {
+    repeat (1) { }
+
+    repeat 1 {
+        ; ; ;
+    }
+}
+
+;; do...until
+() until_stmt() {
+    do { } until 0;
+
+    do {
+        ; ; ;
+        { repeat 1 { } }
+    } until 0;
+}
+
+;; while
+() while_stmt() {
+    while 0 { }
+
+    while 0 {
+        ; ; ;
+        { repeat 1 { } }
+    }
+}
+
+;; try...catch
+() try_catch_stmt() {
+    try {
+        ; ; ;
+        { }
+    } catch (_, _) {
+        ; ; ;
+        { }
+    }
+
+    try { } catch (_) { }
+    try { } catch (exception, exit_code) { }
+}
+
+;; Expression (most of the related tests are in another file)
+() expression_stmt() {
+    42;
+}
+
+----------------------------------------------------
+
+[
+	["comment", ";; return"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "return_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["keyword", "return"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["builtin", "int"],
+	["function", "return_stmt'"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["keyword", "return"],
+	["number", "42"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["comment", ";; Block"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "block_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["punctuation", "{"],
+
+	["punctuation", "{"],
+	["keyword", "return"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["comment", ";; Empty"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "empty_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+
+	["punctuation", "}"],
+
+	["comment", ";; Condition"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "cond_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["keyword", "if"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "else"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "else"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "elseif"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "elseifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "elseif"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "elseifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseif"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseif"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseifnot"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "if"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseif"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "else"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["keyword", "ifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "elseifnot"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+	["keyword", "else"],
+	["punctuation", "{"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["comment", ";; repeat"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "repeat_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["keyword", "repeat"],
+	["punctuation", "("],
+	["number", "1"],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "repeat"], ["number", "1"], ["punctuation", "{"],
+	["punctuation", ";"], ["punctuation", ";"], ["punctuation", ";"],
+	["punctuation", "}"],
+	["punctuation", "}"],
+
+	["comment", ";; do...until"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "until_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["keyword", "do"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "until"],
+	["number", "0"],
+	["punctuation", ";"],
+
+	["keyword", "do"],
+	["punctuation", "{"],
+
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+
+	["punctuation", "{"],
+	["keyword", "repeat"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+	["keyword", "until"],
+	["number", "0"],
+	["punctuation", ";"],
+
+	["punctuation", "}"],
+
+	["comment", ";; while"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "while_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["keyword", "while"],
+	["number", "0"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "while"],
+	["number", "0"],
+	["punctuation", "{"],
+
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+
+	["punctuation", "{"],
+	["keyword", "repeat"],
+	["number", "1"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["comment", ";; try...catch"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "try_catch_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["keyword", "try"],
+	["punctuation", "{"],
+
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+	["keyword", "catch"],
+	["punctuation", "("],
+	["comment", "_"],
+	["punctuation", ","],
+	["comment", "_"],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["punctuation", ";"],
+	["punctuation", ";"],
+	["punctuation", ";"],
+
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["keyword", "try"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "catch"],
+	["punctuation", "("],
+	["comment", "_"],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["keyword", "try"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+	["keyword", "catch"],
+	["punctuation", "("],
+	["variable", "exception"],
+	["punctuation", ","],
+	["variable", "exit_code"],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["punctuation", "}"],
+
+	["punctuation", "}"],
+
+	["comment", ";; Expression (most of the related tests are in another file)"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "expression_stmt"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["number", "42"],
+	["punctuation", ";"],
+
+	["punctuation", "}"]
+]
+
+----------------------------------------------------
+
+Statements

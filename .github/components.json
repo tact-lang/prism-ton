@@ -510,7 +510,8 @@
 			"owner": "RunDevelopment"
 		},
 		"func": {
-			"alias": ["FunC", "Func"],
+			"title": "FunC",
+			"alias": "fc",
 			"owner": "sobolevn"
 		},
 		"gml": {

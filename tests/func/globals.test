@@ -1,0 +1,85 @@
+;; No type
+global glob1;
+
+;; Primitive type
+global int glob2;
+
+;; Mapped type
+global int -> int glob3;
+
+;; Convoluted example
+global ((int, (_, cont, cell, (), [int])) -> int) glob4;
+
+;; Multiple at once
+global int glob5, (builder, tuple) glob6, glob7;
+
+----------------------------------------------------
+
+[
+	["comment", ";; No type"],
+	["keyword", "global"], ["variable", "glob1"], ["punctuation", ";"],
+
+	["comment", ";; Primitive type"],
+
+	["keyword", "global"],
+	["builtin", "int"],
+	["variable", "glob2"],
+	["punctuation", ";"],
+
+	["comment", ";; Mapped type"],
+
+	["keyword", "global"],
+	["builtin", "int"],
+	["operator", "->"],
+	["builtin", "int"],
+	["variable", "glob3"],
+	["punctuation", ";"],
+
+	["comment", ";; Convoluted example"],
+
+	["keyword", "global"],
+	["punctuation", "("],
+	["punctuation", "("],
+	["builtin", "int"],
+	["punctuation", ","],
+	["punctuation", "("],
+	["comment", "_"],
+	["punctuation", ","],
+	["builtin", "cont"],
+	["punctuation", ","],
+	["builtin", "cell"],
+	["punctuation", ","],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ","],
+	["punctuation", "["],
+	["builtin", "int"],
+	["punctuation", "]"],
+	["punctuation", ")"],
+	["punctuation", ")"],
+	["operator", "->"],
+	["builtin", "int"],
+	["punctuation", ")"],
+	["variable", "glob4"],
+	["punctuation", ";"],
+
+	["comment", ";; Multiple at once"],
+
+	["keyword", "global"],
+	["builtin", "int"],
+	["variable", "glob5"],
+	["punctuation", ","],
+	["punctuation", "("],
+	["builtin", "builder"],
+	["punctuation", ","],
+	["builtin", "tuple"],
+	["punctuation", ")"],
+	["variable", "glob6"],
+	["punctuation", ","],
+	["variable", "glob7"],
+	["punctuation", ";"]
+]
+
+----------------------------------------------------
+
+Global variable declarations

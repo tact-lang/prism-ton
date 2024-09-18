@@ -29,8 +29,6 @@
       },
     ],
 
-    // TODO: somehow add this without breaking the maps
-
     // SCREAMING_SNAKE_CASE for null values and names of constants
     'constant': [
       {

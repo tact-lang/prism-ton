@@ -1,0 +1,214 @@
+;; Integer literals
+() integers() {
+    42;
+    0x2A;
+    0x2a;
+
+    -42;
+    -0x2A;
+    -0x2a;
+}
+
+;; String literals
+() strings() {
+    "slice";
+    "2A"s;
+    "EQAFmjUoZUqKFEBGYFEMbv-m61sFStgAfUR8J6hJDwUU09iT"a;
+    "int hex"u;
+    "int 32 bits of sha256"h;
+    "int 256 bits of sha256"H;
+    "int crc32"c;
+
+    """
+        multi
+        line
+    """;
+
+    """2A"""s;
+    """EQAFmjUoZUqKFEBGYFEMbv-m61sFStgAfUR8J6hJDwUU09iT"""a;
+    """
+        ...
+    """u;
+    """
+        ...
+    """h;
+    """
+        ...
+    """H;
+    """
+        ...
+    """c;
+}
+
+;; Single-line comment
+{- 
+    Multi-line comment
+    ;; Also a part of the multi-line comment, not a single-line one
+-}
+
+;; Comment madness
+forall    ;; ...
+X, Y      ;; ...
+->        ;; ...
+()     {-
+    ...
+-} ;; ...
+comments!
+()        ;; ...
+{ {- ... -} return (); {- ... -} }
+
+----------------------------------------------------
+
+[
+	["comment", ";; Integer literals"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "integers"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["number", "42"],
+	["punctuation", ";"],
+
+	["number", "0x2A"],
+	["punctuation", ";"],
+
+	["number", "0x2a"],
+	["punctuation", ";"],
+
+	["number", "-42"], ["punctuation", ";"],
+	["number", "-0x2A"], ["punctuation", ";"],
+	["number", "-0x2a"], ["punctuation", ";"],
+	["punctuation", "}"],
+
+	["comment", ";; String literals"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "strings"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", "{"],
+
+	["string", ["\"slice\""]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"2A\"",
+		["symbol", "s"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"EQAFmjUoZUqKFEBGYFEMbv-m61sFStgAfUR8J6hJDwUU09iT\"",
+		["symbol", "a"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"int hex\"",
+		["symbol", "u"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"int 32 bits of sha256\"",
+		["symbol", "h"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"int 256 bits of sha256\"",
+		["symbol", "H"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"int crc32\"",
+		["symbol", "c"]
+	]],
+	["punctuation", ";"],
+
+	["string", ["\"\"\"\r\n        multi\r\n        line\r\n    \"\"\""]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"2A\"\"\"",
+		["symbol", "s"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"EQAFmjUoZUqKFEBGYFEMbv-m61sFStgAfUR8J6hJDwUU09iT\"\"\"",
+		["symbol", "a"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"\r\n        ...\r\n    \"\"\"",
+		["symbol", "u"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"\r\n        ...\r\n    \"\"\"",
+		["symbol", "h"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"\r\n        ...\r\n    \"\"\"",
+		["symbol", "H"]
+	]],
+	["punctuation", ";"],
+
+	["string", [
+		"\"\"\"\r\n        ...\r\n    \"\"\"",
+		["symbol", "c"]
+	]],
+	["punctuation", ";"],
+
+	["punctuation", "}"],
+
+	["comment", ";; Single-line comment"],
+	["comment", "{- \r\n    Multi-line comment\r\n    ;; Also a part of the multi-line comment, not a single-line one\r\n-}"],
+
+	["comment", ";; Comment madness"],
+
+	["keyword", "forall"],
+	["comment", ";; ..."],
+
+	["class-name", "X"],
+	["punctuation", ","],
+	["class-name", "Y"],
+	["comment", ";; ..."],
+
+	["operator", "->"],
+	["comment", ";; ..."],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["comment", "{-\r\n    ...\r\n-}"],
+	["comment", ";; ..."],
+
+	["function", "comments!"],
+
+	["punctuation", "("],
+	["punctuation", ")"],
+	["comment", ";; ..."],
+
+	["punctuation", "{"],
+	["comment", "{- ... -}"],
+	["keyword", "return"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+	["comment", "{- ... -}"],
+	["punctuation", "}"]
+]
+
+----------------------------------------------------
+
+Literals and comments

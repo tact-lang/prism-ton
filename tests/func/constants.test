@@ -1,0 +1,57 @@
+;; Inferred type
+const c1 = 42;
+
+;; Inferred type for multiple ones with using prior constants
+const c2 = 27, c3 = c1;
+
+;; int, inferred int or slice from a string
+const int c4 = 0, c5 = 0, slice c6 = "It's Zendaya"s;
+
+----------------------------------------------------
+
+[
+	["comment", ";; Inferred type"],
+
+	["keyword", "const"],
+	["variable", "c1"],
+	["operator", "="],
+	["number", "42"],
+	["punctuation", ";"],
+
+	["comment", ";; Inferred type for multiple ones with using prior constants"],
+
+	["keyword", "const"],
+	["variable", "c2"],
+	["operator", "="],
+	["number", "27"],
+	["punctuation", ","],
+	["variable", "c3"],
+	["operator", "="],
+	["variable", "c1"],
+	["punctuation", ";"],
+
+	["comment", ";; int, inferred int or slice from a string"],
+
+	["keyword", "const"],
+	["builtin", "int"],
+	["variable", "c4"],
+	["operator", "="],
+	["number", "0"],
+	["punctuation", ","],
+	["variable", "c5"],
+	["operator", "="],
+	["number", "0"],
+	["punctuation", ","],
+	["builtin", "slice"],
+	["variable", "c6"],
+	["operator", "="],
+	["string", [
+		"\"It's Zendaya\"",
+		["symbol", "s"]
+	]],
+	["punctuation", ";"]
+]
+
+----------------------------------------------------
+
+Constants

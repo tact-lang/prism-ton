@@ -7,7 +7,7 @@ const int k_int = 1;
 
 () recv_internal(int my_balance, int msg_value, cell in_msg_full, slice in_msg_body) impure {
     slice cs = in_msg_full.begin_parse();
-    int flags = cs~load_uint(0x4_1_0);
+    int flags = cs~load_uint(0x4f);
 
     if ((flags & 1) == true) { ;; ignore all bounced messages
         return ();
@@ -16,10 +16,8 @@ const int k_int = 1;
     slice sender_address = cs~load_msg_addr();
 
     {-
-    {-
-    test - is test
-    -}
-    -}
+      Totally random number: 42
+	-}
 
     ;; Send message
     var message = begin_cell()
@@ -57,7 +55,7 @@ int counter() method_id {
 [
 	["include", [
 		["keyword", "#include"],
-		["string", "\"../\""],
+		["string", ["\"../\""]],
 		["punctuation", ";"]
 	]],
 	["pragma", [
@@ -81,13 +79,13 @@ int counter() method_id {
 	["keyword", "const"],
 	["builtin", "int"],
 	["variable", "k_int"],
-	["variable", "="],
+	["operator", "="],
 	["number", "1"],
 	["punctuation", ";"],
 
 	["punctuation", "("],
 	["punctuation", ")"],
-	["variable", "recv_internal"],
+	["function", "recv_internal"],
 	["punctuation", "("],
 	["builtin", "int"],
 	["variable", "my_balance"],
@@ -106,22 +104,21 @@ int counter() method_id {
 
 	["builtin", "slice"],
 	["variable", "cs"],
-	["variable", "="],
+	["operator", "="],
 	["variable", "in_msg_full"],
 	["punctuation", "."],
-	["variable", "begin_parse"],
+	["function", "begin_parse"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
 	["builtin", "int"],
 	["variable", "flags"],
-	["variable", "="],
+	["operator", "="],
 	["variable", "cs"],
-	["operator", "~"],
-	["variable", "load_uint"],
+	["function", "~load_uint"],
 	["punctuation", "("],
-	["number", "0x4_1_0"],
+	["number", "0x4f"],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
@@ -129,10 +126,10 @@ int counter() method_id {
 	["punctuation", "("],
 	["punctuation", "("],
 	["variable", "flags"],
-	["variable", "&"],
+	["operator", "&"],
 	["number", "1"],
 	["punctuation", ")"],
-	["variable", "=="],
+	["operator", "=="],
 	["boolean", "true"],
 	["punctuation", ")"],
 	["punctuation", "{"],
@@ -147,28 +144,26 @@ int counter() method_id {
 
 	["builtin", "slice"],
 	["variable", "sender_address"],
-	["variable", "="],
+	["operator", "="],
 	["variable", "cs"],
-	["operator", "~"],
-	["variable", "load_msg_addr"],
+	["function", "~load_msg_addr"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
-	["comment", "{-\r\n    {-\r\n    test - is test\r\n    -}"],
-	["variable", "-}"],
+	["comment", "{-\r\n      Totally random number: 42\r\n\t-}"],
 
 	["comment", ";; Send message"],
 
-	["builtin", "var"],
+	["keyword", "var"],
 	["variable", "message"],
-	["variable", "="],
-	["variable", "begin_cell"],
+	["operator", "="],
+	["function", "begin_cell"],
 	["punctuation", "("],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_uint"],
+	["function", "store_uint"],
 	["punctuation", "("],
 	["number", "0x18"],
 	["punctuation", ","],
@@ -176,50 +171,53 @@ int counter() method_id {
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_slice"],
+	["function", "store_slice"],
 	["punctuation", "("],
 	["variable", "sender_address"],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_coins"],
+	["function", "store_coins"],
 	["punctuation", "("],
 	["number", "0"],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_uint"],
+	["function", "store_uint"],
 	["punctuation", "("],
 	["number", "0"],
 	["punctuation", ","],
 	["number", "1"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "4"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "4"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "64"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "32"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "1"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "1"],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_slice"],
+	["function", "store_slice"],
 	["punctuation", "("],
-	["string", "\"Hello, world!\"s"],
+	["string", [
+		"\"Hello, world!\"",
+		["symbol", "s"]
+	]],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "end_cell"],
+	["function", "end_cell"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
-	["variable", "send_raw_message"],
+	["function", "send_raw_message"],
 	["punctuation", "("],
 	["variable", "message"],
 	["punctuation", ","],
@@ -229,48 +227,47 @@ int counter() method_id {
 
 	["comment", ";; Update counter"],
 
-	["builtin", "var"],
+	["keyword", "var"],
 	["variable", "cs"],
-	["variable", "="],
-	["variable", "get_data"],
+	["operator", "="],
+	["function", "get_data"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", "."],
-	["variable", "begin_parse"],
+	["function", "begin_parse"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
-	["builtin", "var"],
+	["keyword", "var"],
 	["variable", "counter"],
-	["variable", "="],
+	["operator", "="],
 	["variable", "data"],
-	["operator", "~"],
-	["variable", "load_uint"],
+	["function", "~load_uint"],
 	["punctuation", "("],
 	["number", "32"],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
-	["variable", "store_data"],
+	["function", "store_data"],
 	["punctuation", "("],
 
-	["variable", "begin_cell"],
+	["function", "begin_cell"],
 	["punctuation", "("],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "store_uint"],
+	["function", "store_uint"],
 	["punctuation", "("],
 	["variable", "counter"],
-	["variable", "+"],
+	["operator", "+"],
 	["number", "1"],
 	["punctuation", ","],
 	["number", "32"],
 	["punctuation", ")"],
 
 	["punctuation", "."],
-	["variable", "end_cell"],
+	["function", "end_cell"],
 	["punctuation", "("],
 	["punctuation", ")"],
 
@@ -281,7 +278,7 @@ int counter() method_id {
 
 	["punctuation", "("],
 	["punctuation", ")"],
-	["variable", "recv_external"],
+	["function", "recv_external"],
 	["punctuation", "("],
 	["builtin", "slice"],
 	["variable", "in_msg"],
@@ -289,7 +286,7 @@ int counter() method_id {
 	["keyword", "impure"],
 	["punctuation", "{"],
 
-	["variable", "throw"],
+	["function", "throw"],
 	["punctuation", "("],
 	["number", "0xffff"],
 	["punctuation", ")"],
@@ -298,28 +295,27 @@ int counter() method_id {
 	["punctuation", "}"],
 
 	["builtin", "int"],
-	["variable", "counter"],
+	["function", "counter"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["keyword", "method_id"],
 	["punctuation", "{"],
 
-	["builtin", "var"],
+	["keyword", "var"],
 	["variable", "data"],
-	["variable", "="],
-	["variable", "get_data"],
+	["operator", "="],
+	["function", "get_data"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", "."],
-	["variable", "begin_parse"],
+	["function", "begin_parse"],
 	["punctuation", "("],
 	["punctuation", ")"],
 	["punctuation", ";"],
 
 	["keyword", "return"],
 	["variable", "data"],
-	["operator", "~"],
-	["variable", "load_uint"],
+	["function", "~load_uint"],
 	["punctuation", "("],
 	["number", "32"],
 	["punctuation", ")"],
@@ -327,3 +323,7 @@ int counter() method_id {
 
 	["punctuation", "}"]
 ]
+
+----------------------------------------------------
+
+Complete test of the FunC language definition for Prism.js
