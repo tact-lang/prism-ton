@@ -1,0 +1,248 @@
+;; Single assembly string
+int inc_then_negate(int x) asm "INC NEGATE";
+
+;; Multiple assembly strings
+int inc_then_negate'(int x) asm "INC" "NEGATE";
+
+;; Multi-line strings
+
+int inc_then_negate''(int x) asm """INC NEGATE""";
+
+slice hello_world() asm """
+    "Hello"
+    " "
+    "World"
+    $+ $+ $>s
+    PUSHSLICE
+""";
+
+;; Mix single-line and multi-line strings
+
+int inc_then_negate'''(int x) asm "INC" """
+    NEGATE
+""";
+
+;; Arrangement of return values (and whitespaces check)
+                 (builder, int)
+store_uint_quiet (builder b, int x, int len)
+asm              (x b len)
+"STUXQ";
+
+;; Arrangement of arguments
+(int, builder) store_uint_quiet'(int x, builder b, int len)
+               asm( -> 1 0) "STUXQ";
+
+;; Arrangement of arguments mapped to return values
+(int, builder) store_uint_quiet''(builder b, int x, int len)
+               asm(x b len -> 1 0) "STUXQ";
+
+;; Parametric polymorphism with forall
+
+forall X, Y -> (X, Y) store_uint_quiet'''(builder b, int x, int len) asm(x b len -> 1 0) "STUXQ";
+
+forall X -> X unsingle([X] t) asm "UNSINGLE";
+
+----------------------------------------------------
+
+[
+	["comment", ";; Single assembly string"],
+
+	["builtin", "int"],
+	["function", "inc_then_negate"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"INC NEGATE\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Multiple assembly strings"],
+
+	["builtin", "int"],
+	["function", "inc_then_negate'"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"INC\""]],
+	["string", ["\"NEGATE\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Multi-line strings"],
+
+	["builtin", "int"],
+	["function", "inc_then_negate''"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"\"\"INC NEGATE\"\"\""]],
+	["punctuation", ";"],
+
+	["builtin", "slice"],
+	["function", "hello_world"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"\"\"\r\n    \"Hello\"\r\n    \" \"\r\n    \"World\"\r\n    $+ $+ $>s\r\n    PUSHSLICE\r\n\"\"\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Mix single-line and multi-line strings"],
+
+	["builtin", "int"],
+	["function", "inc_then_negate'''"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"INC\""]],
+	["string", ["\"\"\"\r\n    NEGATE\r\n\"\"\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Arrangement of return values (and whitespaces check)"],
+
+	["punctuation", "("],
+	["builtin", "builder"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["punctuation", ")"],
+
+	["function", "store_uint_quiet"],
+	["punctuation", "("],
+	["builtin", "builder"],
+	["variable", "b"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "len"],
+	["punctuation", ")"],
+
+	["keyword", "asm"],
+	["punctuation", "("],
+	["variable", "x"],
+	["variable", "b"],
+	["variable", "len"],
+	["punctuation", ")"],
+
+	["string", ["\"STUXQ\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Arrangement of arguments"],
+
+	["punctuation", "("],
+	["builtin", "int"],
+	["punctuation", ","],
+	["builtin", "builder"],
+	["punctuation", ")"],
+	["function", "store_uint_quiet'"],
+	["punctuation", "("],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ","],
+	["builtin", "builder"],
+	["variable", "b"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "len"],
+	["punctuation", ")"],
+
+	["keyword", "asm"],
+	["punctuation", "("],
+	["operator", "->"],
+	["number", "1"],
+	["number", "0"],
+	["punctuation", ")"],
+	["string", ["\"STUXQ\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Arrangement of arguments mapped to return values"],
+
+	["punctuation", "("],
+	["builtin", "int"],
+	["punctuation", ","],
+	["builtin", "builder"],
+	["punctuation", ")"],
+	["function", "store_uint_quiet''"],
+	["punctuation", "("],
+	["builtin", "builder"],
+	["variable", "b"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "len"],
+	["punctuation", ")"],
+
+	["keyword", "asm"],
+	["punctuation", "("],
+	["variable", "x"],
+	["variable", "b"],
+	["variable", "len"],
+	["operator", "->"],
+	["number", "1"],
+	["number", "0"],
+	["punctuation", ")"],
+	["string", ["\"STUXQ\""]],
+	["punctuation", ";"],
+
+	["comment", ";; Parametric polymorphism with forall"],
+
+	["keyword", "forall"],
+	["class-name", "X"],
+	["punctuation", ","],
+	["class-name", "Y"],
+	["operator", "->"],
+	["punctuation", "("],
+	["class-name", "X"],
+	["punctuation", ","],
+	["class-name", "Y"],
+	["punctuation", ")"],
+	["function", "store_uint_quiet'''"],
+	["punctuation", "("],
+	["builtin", "builder"],
+	["variable", "b"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "x"],
+	["punctuation", ","],
+	["builtin", "int"],
+	["variable", "len"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["punctuation", "("],
+	["variable", "x"],
+	["variable", "b"],
+	["variable", "len"],
+	["operator", "->"],
+	["number", "1"],
+	["number", "0"],
+	["punctuation", ")"],
+	["string", ["\"STUXQ\""]],
+	["punctuation", ";"],
+
+	["keyword", "forall"],
+	["class-name", "X"],
+	["operator", "->"],
+	["class-name", "X"],
+	["function", "unsingle"],
+	["punctuation", "("],
+	["punctuation", "["],
+	["class-name", "X"],
+	["punctuation", "]"],
+	["variable", "t"],
+	["punctuation", ")"],
+	["keyword", "asm"],
+	["string", ["\"UNSINGLE\""]],
+	["punctuation", ";"]
+]
+
+----------------------------------------------------
+
+Functions with asm strings

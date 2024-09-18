@@ -1,0 +1,208 @@
+;; Literals
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+;; Version ranges
+#pragma version 0;
+#pragma version 0.0;
+#pragma version 0.0.0;
+#pragma version =0;
+#pragma version =0.0;
+#pragma version =0.0.0;
+#pragma version ^0;
+#pragma version <0;
+#pragma version >0;
+#pragma version <=0;
+#pragma version >=0;
+#pragma not-version 0;
+#pragma not-version 0.0;
+#pragma not-version 0.0.0;
+#pragma not-version =0;
+#pragma not-version =0.0;
+#pragma not-version =0.0.0;
+#pragma not-version ^0;
+#pragma not-version <0;
+#pragma not-version >0;
+#pragma not-version <=0;
+#pragma not-version >=0;
+
+;; Used in internal tests of FunC in ton-blockchain/ton monorepo
+#pragma test-version-set "0.4.4";
+
+----------------------------------------------------
+
+[
+	["comment", ";; Literals"],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "allow-post-modification"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "compute-asm-ltr"],
+		["punctuation", ";"]
+	]],
+
+	["comment", ";; Version ranges"],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["number", "0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["number", "0.0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "="],
+		["number", "0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "="],
+		["number", "0.0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "^"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "<"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", ">"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", "<="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "version"],
+		["operator", ">="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["number", "0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["number", "0.0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "="],
+		["number", "0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "="],
+		["number", "0.0.0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "^"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "<"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", ">"],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", "<="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "not-version"],
+		["operator", ">="],
+		["number", "0"],
+		["punctuation", ";"]
+	]],
+
+	["comment", ";; Used in internal tests of FunC in ton-blockchain/ton monorepo"],
+	["pragma", [
+		["keyword", "#pragma"],
+		["keyword", "test-version-set"],
+		["string", ["\"0.4.4\""]],
+		["punctuation", ";"]
+	]]
+]
+
+----------------------------------------------------
+
+Pragmas
