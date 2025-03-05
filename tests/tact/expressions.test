@@ -34,6 +34,9 @@ fun _() {
 
     null!!;
     (0);
+
+	initOf SomeContract();
+	codeOf SomeContract;
 }
 
 ----------------------------------------------------
@@ -225,6 +228,16 @@ fun _() {
 	["punctuation", "("],
 	["number", "0"],
 	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["keyword", "initOf"],
+	["class-name", "SomeContract"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["punctuation", ";"],
+
+	["keyword", "codeOf"],
+	["class-name", "SomeContract"],
 	["punctuation", ";"],
 
 	["punctuation", "}"]
