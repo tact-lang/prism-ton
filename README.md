@@ -1,6 +1,5 @@
 > [!CAUTION]
-> This project has entered maintenance mode. Tact grammar is deprecated; others are deemed legacy.
-> Prefer TextMate grammars over Prism.js ones.
+> Tact grammar is deprecated; others are deemed legacy. Prefer TextMate grammars over Prism.js ones.
 >
 > For up-to-date TextMate grammars, see the
 > [TON language server repository](https://github.com/ton-blockchain/ton-language-server/blob/main/CONTRIBUTING.md#vs-code-extension).
