@@ -6,13 +6,13 @@
 
 # prism-ton
 
-🔺 Maintained set of TON blockchain programming language definitions for Prism.js
+🔺 Set of TON blockchain programming language definitions for Prism.js:
 
 * 💎 FunC — https://docs.ton.org/develop/func/overview
 * 📚 Fift — https://docs.ton.org/develop/fift/overview
 * 📄 TL-B — https://docs.ton.org/develop/data-formats/tl-b-language
 
-Deprecated:
+▼ Deprecated:
 
 * ⚡ Tact — https://github.com/tact-lang/tact
 
@@ -56,22 +56,17 @@ And `yarn test` runs all those tests in succession.
 The workflow looks like this:
 
 1. Add changes to the grammar
-2. See how it works by opening the `.github/submodule-prism/test.html` file in the browser
-3. Add/update tests
-4. Execute and modify tests until they pass :)
+2. Revise them by opening the `.github/submodule-prism/test.html` file in the browser
+3. Add or update tests
+4. Repeatedly execute and adjust tests until they pass
 5. Commit & push
 6. Make PRs to:
-  * ton-community/ton-docs
-  * TelegramMessenger/libprisma
-  * prismjs/prism
+  * <https://github.com/TelegramMessenger/libprisma>
+  * ~~prismjs/prism~~ (not being actively developed)
+  * ~~ton-community/ton-docs~~ (archived)
 
-Prism.js docs: https://prismjs.com/extending.html
-Awesome RegExp visualization tool: https://regex101.com
-
-## TODO
-
-* [ ] Github Actions checks akin to ones in prismjs/prism
-* [ ] Pre-push hooks with mandatory builds & tests -> push shall be stopped in case of errors
+- Prism.js docs: https://prismjs.com/extending.html
+- Awesome RegExp visualization tool: https://regex101.com
 
 ## Credits
 
