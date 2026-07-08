@@ -1,11 +1,21 @@
+> [!CAUTION]
+> This project has entered maintenance mode. Tact grammar is deprecated; others are deemed legacy.
+> Prefer TextMate grammars over Prism.js ones.
+>
+> For up-to-date TextMate grammars, see the
+> [TON language server repository](https://github.com/ton-blockchain/ton-language-server/blob/main/CONTRIBUTING.md#vs-code-extension).
+
 # prism-ton
 
 🔺 Maintained set of TON blockchain programming language definitions for Prism.js
 
-* ⚡ Tact — https://tact-lang.org
 * 💎 FunC — https://docs.ton.org/develop/func/overview
 * 📚 Fift — https://docs.ton.org/develop/fift/overview
 * 📄 TL-B — https://docs.ton.org/develop/data-formats/tl-b-language
+
+Deprecated:
+
+* ⚡ Tact — https://github.com/tact-lang/tact
 
 ## Initialization
 
@@ -19,26 +29,26 @@ Upon cloning this repo, invoke the following commands in order of appearance (bu
 
 Grammar files are located in `langs/X` files, where `X` can be one of:
 
-* `prism-tact.js` — Tact grammar
 * `prism-func.js` — FunC grammar
 * `prism-fift.js` — Fift grammar
 * `prism-tlb.js` — TL-B grammar
+* `prism-tact.js` — Tact grammar (deprecated)
 
 Test files are located in `tests/X` folders, where `X` can be one of:
 
-* `tact` — Tact tests
 * `func` — FunC tests
 * `fift` — Fift tests
 * `tlb` — TL-B tests
+* `tact` — Tact tests (deprecated)
 
 ## Running tests
 
 [Once initialized](#initialization), you'll be able to run tests for each language in this repo, namely:
 
-* `yarn test:tact` will run tests for Tact
 * `yarn test:func` will run tests for FunC
 * `yarn test:fift` will run tests for Fift
 * `yarn test:tlb` will run tests for TL-B
+* `yarn test:tact` will run tests for Tact (deprecated)
 
 And `yarn test` runs all those tests in succession.
 
